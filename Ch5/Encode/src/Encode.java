@@ -5,21 +5,28 @@ public class Encode {
 		String msg = "This is a test";
 		String encmsg = "";
 		String decmsg = "";
-		int key = 8;
+		String key = "abkuedsy";
+		int j;
 		
 		System.out.print("Original message: ");
 		System.out.println(msg);
 		
 		//encode the message
-		for (int i = 0; i < msg.length(); i++)
-			encmsg = encmsg + (char) (msg.charAt(i) ^ key);
+		j = 0;
+		for (int i = 0; i < msg.length(); i++) {
+			encmsg = encmsg + (char) (msg.charAt(i) ^ key.charAt(j));
+			if (j == 8) j = 0;
+		}
 		
 		System.out.print("Encoded message: ");
 		System.out.println(encmsg);
 		
 		//decode the message
-		for (int i = 0; i < msg.length(); i++)
-			decmsg = decmsg + (char) (encmsg.charAt(i) ^ key);
+		j = 0;
+		for (int i = 0; i < msg.length(); i++) {
+			decmsg = decmsg + (char) (encmsg.charAt(i) ^ key.charAt(j));
+			if (j == 8) j = 0;
+		}
 		
 		System.out.print("Decoded message: ");
 		System.out.println(decmsg);
