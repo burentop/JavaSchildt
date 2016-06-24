@@ -46,10 +46,11 @@ public class Stack {
 		if (poploc < 0) {
 			System.out.println(" - Stack is empty.");
 			return (char) 0;
-		}
-		char toReturn = s[poploc];
-		poploc--;
-		return toReturn;
+		} else if (poploc == 0) {
+			poploc--;
+			return s[0];
+		} else
+			return s[--poploc];
 	}
 	
 }
