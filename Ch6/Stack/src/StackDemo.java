@@ -24,8 +24,8 @@ public class StackDemo {
 		System.out.println("Using smallS to generate errors.");
 		// Now, use smallS to generate some errors
 		for (i = 0; i < 5; i++) {
-			System.out.print("Attempting to store " + (char) ('Z' - i));
-			smallS.push((char) ('Z' - i));
+			System.out.print("Attempting to store " + (char) ('A' + i));
+			smallS.push((char) ('A' + i));
 			System.out.println();
 		}
 		System.out.println();

@@ -27,6 +27,7 @@ public class Stack {
 		s = new char[a.length];
 		
 		for (int i = 0; i < a.length; i++) push(a[i]);
+		poploc = s.length - 1;
 	}
 	
 	// push a character into the stack
@@ -37,16 +38,18 @@ public class Stack {
 		}
 		
 		s[pushloc++] = ch;
+		poploc = pushloc;
 	}
 	
 	// pop a character from the stack
 	char pop() {
-		if (poploc == pushloc) {
+		if (poploc < 0) {
 			System.out.println(" - Stack is empty.");
 			return (char) 0;
 		}
-		
-		return s[poploc++];
+		char toReturn = s[poploc];
+		poploc--;
+		return toReturn;
 	}
 	
 }
