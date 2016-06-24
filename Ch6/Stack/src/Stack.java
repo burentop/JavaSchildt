@@ -1,8 +1,8 @@
 
 public class Stack {
 	
-	char[] s; // this array hold the stack
-	int pushloc, poploc;
+	private char[] s; // this array hold the stack
+	private int pushloc, poploc;
 	
 	Stack(int size) {
 		s = new char[size]; // allocate memory for stack
