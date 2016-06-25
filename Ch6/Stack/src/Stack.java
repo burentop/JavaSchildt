@@ -2,55 +2,51 @@
 public class Stack {
 	
 	private char[] s; // this array hold the stack
-	private int pushloc, poploc;
+	private int loc;
 	
 	Stack(int size) {
 		s = new char[size]; // allocate memory for stack
-		pushloc = poploc = 0;
+		loc = 0;
 	}
 	
 	// Construct a Stack from a Stack
 	Stack (Stack ob) {
-		pushloc = ob.pushloc;
-		poploc = ob.poploc;
+		loc = ob.loc;
 		s = new char[ob.s.length];
 		
 		// copy elements
-		for (int i = poploc; i < pushloc; i++)
+		for (int i = 0; i < loc; i++)
 			s[i] = ob.s[i];
 	}
 	
 	// Construct a Stack with initial values.
 	Stack (char a[]) {
-		pushloc = 0;
-		poploc = 0;
+		loc = 0;
 		s = new char[a.length];
 		
 		for (int i = 0; i < a.length; i++) push(a[i]);
-		poploc = s.length - 1;
+		loc = s.length - 1;
 	}
 	
 	// push a character into the stack
 	void push(char ch) {
-		if (pushloc == s.length) {
+		if (loc == s.length) {
 			System.out.println(" - Stack is full.");
 			return;
 		}
 		
-		s[pushloc++] = ch;
-		poploc = pushloc;
+		s[loc++] = ch;
 	}
 	
 	// pop a character from the stack
 	char pop() {
-		if (poploc < 0) {
+		if (loc == 0) {
 			System.out.println(" - Stack is empty.");
 			return (char) 0;
-		} else if (poploc == 0) {
-			poploc--;
-			return s[0];
-		} else
-			return s[--poploc];
+		} else {
+			loc--;
+			return s[loc];
+		}
 	}
 	
 }
