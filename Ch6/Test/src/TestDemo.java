@@ -10,5 +10,7 @@ public class TestDemo {
 		System.out.println("test1: " + test1.a);
 		System.out.println("test2: " + test2.a);
 		
+		test1.reverseIt(0);
+		
 	}
 }
