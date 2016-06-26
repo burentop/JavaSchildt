@@ -21,4 +21,12 @@ public class Test {
 		System.out.print(this.aString.charAt(idx));
 	}
 	
+	int sumInt(int...v) {
+		int sum = 0;
+		for (int i = 0; i < v.length; i++) {
+			sum += v[i];
+		}
+		return sum;
+	}
+	
 }

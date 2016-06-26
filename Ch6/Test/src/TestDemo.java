@@ -12,5 +12,11 @@ public class TestDemo {
 		
 		test1.reverseIt(0);
 		
+		System.out.println();
+		
+		System.out.println(test1.sumInt(3, 4, 7, 12));
+		System.out.println(test1.sumInt(3, 4, 7));
+		
+		
 	}
 }
