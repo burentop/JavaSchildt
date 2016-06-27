@@ -5,27 +5,32 @@ public class TwoDShape {
 	
 	private double width;
 	private double height;
+	private String name;
 	
 	// Default constructor
 	TwoDShape() {
 		width = height = 0.0;
+		name = "none";
 	}
 	
 	// Parameterized constructor
-	TwoDShape(double w, double h) {
+	TwoDShape(double w, double h, String n) {
 		width = w;
 		height = h;
+		name = n;
 	}
 	
 	// Construct object with equal width and height
-	TwoDShape(double x) {
+	TwoDShape(double x, String n) {
 		width = height = x;
+		name = n;
 	}
 	
 	// Construct object from object
 	TwoDShape(TwoDShape ob) {
 		width = ob.width;
 		height = ob.height;
+		name = ob.name;
 	}
 	
 	// Accessor methods for width and height
@@ -34,9 +39,16 @@ public class TwoDShape {
 	void setWidth(double w) { width = w; }
 	void setHeight(double h) { height = h; }
 	
+	String getName() { return name; }
+	
 	void showDim() {
 		System.out.println("Width and height are " + width + " and " + height);
 	}	
+	
+	double area() {
+		System.out.println("area() must be overridden");
+		return 0.0;
+	}
 }
 
 //A subclass of TwoDShape for triangles.
@@ -51,14 +63,14 @@ class Triangle extends TwoDShape {
 	
 	// Constructor
 	Triangle(String s, double w, double h) {
-		super(w, h); // call superclass constructor
+		super(w, h, "triangle"); // call superclass constructor
 		
 		style = s;
 	}
 	
 	// One argument constructor
 	Triangle(double x) {
-		super(x);
+		super(x, "triangle");
 		style = "filled";
 	}
 	
@@ -79,20 +91,19 @@ class Triangle extends TwoDShape {
 
 class Shapes {
 	public static void main (String[] args) {
-		Triangle t1 = new Triangle("outlined", 8.0, 12.0);
-		Triangle t2 = new Triangle(t1);
+		TwoDShape shapes[] = new TwoDShape[5];
 		
-		System.out.println("Info for t1: ");
-		t1.showStyle();
-		t1.showDim();
-		System.out.println("Area is " + t1.area());
+		shapes[0] = new Triangle("outlined", 8.0, 12.0);
+		shapes[1] = new Rectangle(10);
+		shapes[2] = new Rectangle(10, 4);
+		shapes[3] = new Triangle(7.0);
+		shapes[4] = new TwoDShape(10, 20, "generic");
 		
-		System.out.println();
-		
-		System.out.println("Infor for t2: ");
-		t2.showStyle();
-		t2.showDim();
-		System.out.println("Area is " + t2.area());
+		for (int i = 0; i < shapes.length; i++) {
+			System.out.println("object is " + shapes[i].getName());
+			System.out.println("Area is " + shapes[i].area());
+			System.out.println();
+		}
 		
 	}
 }
