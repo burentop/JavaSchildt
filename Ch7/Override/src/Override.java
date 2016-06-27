@@ -20,8 +20,8 @@ class B extends A {
 	}
 	
 	// display k - overrides show() in A
-	void show() {
-		System.out.println("k: " + k);
+	void show(String msg) {
+		System.out.println(msg + k);
 	}
 }
 
@@ -29,6 +29,7 @@ public class Override {
 	public static void main (String[] args) {
 		B subOb = new B(1, 2, 3);
 		
-		subOb.show(); // calls the show() in B
+		subOb.show("This is k: "); // calls show() in B
+		subOb.show(); // calls show() in A
 	}
 }
