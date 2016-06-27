@@ -6,6 +6,12 @@ public class TwoDShape {
 	private double width;
 	private double height;
 	
+	// Parameterized constructor
+	TwoDShape(double w, double h) {
+		width = w;
+		height = h;
+	}
+	
 	// Accessor methods for width and height
 	double getWidth() { return width; }
 	double getHeight() { return height; }
@@ -23,8 +29,7 @@ class Triangle extends TwoDShape {
 	
 	// Constructor
 	Triangle(String s, double w, double h) {
-		setWidth(w);
-		setHeight(h);
+		super(w, h); // call superclass constructor
 		
 		style = s;
 	}
