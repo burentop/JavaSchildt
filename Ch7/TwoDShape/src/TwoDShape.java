@@ -1,7 +1,7 @@
 // A simple class hierarchy.
 
 // A class for two-dimensional objects.
-public class TwoDShape {
+abstract class TwoDShape {
 	
 	private double width;
 	private double height;
@@ -45,10 +45,7 @@ public class TwoDShape {
 		System.out.println("Width and height are " + width + " and " + height);
 	}	
 	
-	double area() {
-		System.out.println("area() must be overridden");
-		return 0.0;
-	}
+	abstract double area();
 }
 
 //A subclass of TwoDShape for triangles.
@@ -91,13 +88,12 @@ class Triangle extends TwoDShape {
 
 class Shapes {
 	public static void main (String[] args) {
-		TwoDShape shapes[] = new TwoDShape[5];
+		TwoDShape shapes[] = new TwoDShape[4];
 		
 		shapes[0] = new Triangle("outlined", 8.0, 12.0);
 		shapes[1] = new Rectangle(10);
 		shapes[2] = new Rectangle(10, 4);
 		shapes[3] = new Triangle(7.0);
-		shapes[4] = new TwoDShape(10, 20, "generic");
 		
 		for (int i = 0; i < shapes.length; i++) {
 			System.out.println("object is " + shapes[i].getName());
