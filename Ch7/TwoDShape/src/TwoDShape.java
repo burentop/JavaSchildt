@@ -22,6 +22,12 @@ public class TwoDShape {
 		width = height = x;
 	}
 	
+	// Construct object from object
+	TwoDShape(TwoDShape ob) {
+		width = ob.width;
+		height = ob.height;
+	}
+	
 	// Accessor methods for width and height
 	double getWidth() { return width; }
 	double getHeight() { return height; }
@@ -56,6 +62,12 @@ class Triangle extends TwoDShape {
 		style = "filled";
 	}
 	
+	// Construct object from object
+	Triangle(Triangle ob) {
+		super(ob); // pass object to TwoDShape constructor
+		style = ob.style;
+	}
+	
 	double area() {
 		return getWidth() * getHeight() / 2;
 	}
@@ -67,13 +79,12 @@ class Triangle extends TwoDShape {
 
 class Shapes {
 	public static void main (String[] args) {
-		ColorTriangle t1 = new ColorTriangle("Blue", "outlined", 8.0, 12.0);
-		ColorTriangle t2 = new ColorTriangle("Red", "filled", 2.0, 2.0);
+		Triangle t1 = new Triangle("outlined", 8.0, 12.0);
+		Triangle t2 = new Triangle(t1);
 		
 		System.out.println("Info for t1: ");
 		t1.showStyle();
 		t1.showDim();
-		t1.showColor();
 		System.out.println("Area is " + t1.area());
 		
 		System.out.println();
@@ -81,7 +92,6 @@ class Shapes {
 		System.out.println("Infor for t2: ");
 		t2.showStyle();
 		t2.showDim();
-		t2.showColor();
 		System.out.println("Area is " + t2.area());
 		
 	}
