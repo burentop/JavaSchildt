@@ -19,7 +19,15 @@ public class TwoDShape {
 
 //A subclass of TwoDShape for triangles.
 class Triangle extends TwoDShape {
-	String style;
+	private String style;
+	
+	// Constructor
+	Triangle(String s, double w, double h) {
+		setWidth(w);
+		setHeight(h);
+		
+		style = s;
+	}
 	
 	double area() {
 		return getWidth() * getHeight() / 2;
@@ -32,16 +40,8 @@ class Triangle extends TwoDShape {
 
 class Shapes {
 	public static void main (String[] args) {
-		Triangle t1 = new Triangle();
-		Triangle t2 = new Triangle();
-		
-		t1.setWidth(4.0);
-		t1.setHeight(4.0);
-		t1.style = "filled";
-		
-		t2.setWidth(8.0);
-		t2.setHeight(12.0);
-		t2.style = "outlined";
+		Triangle t1 = new Triangle("filled", 4.0, 4.0);
+		Triangle t2 = new Triangle("outlined", 8.0, 12.0);
 		
 		System.out.println("Info for t1: ");
 		t1.showStyle();
