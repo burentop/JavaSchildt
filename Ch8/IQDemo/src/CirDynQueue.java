@@ -44,4 +44,12 @@ public class CirDynQueue implements ICharQ {
 		getloc = putloc = 0;
 	}
 	
+	public int getSize() {
+		return q.length;
+	}
+	
+	public char viewChar(int x) {
+		return q[x];
+	}
+	
 }

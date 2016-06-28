@@ -26,7 +26,7 @@ public class DynQueue implements ICharQ {
 	
 	public char get() {
 		if (getloc == putloc) {
-			System.out.println(" - Queues is empty.");
+			System.out.println(" - Queue is empty.");
 			return (char) 0;
 		}
 		
@@ -35,6 +35,14 @@ public class DynQueue implements ICharQ {
 	
 	public void reset() {
 		getloc = putloc = 0;
+	}
+	
+	public int getSize() {
+		return q.length;
+	}
+	
+	public char viewChar(int x) {
+		return q[x];
 	}
 	
 }

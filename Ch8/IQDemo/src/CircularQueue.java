@@ -37,4 +37,12 @@ public class CircularQueue implements ICharQ {
 		putloc = getloc = 0;
 	}
 	
+	public int getSize() {
+		return q.length;
+	}
+	
+	public char viewChar(int x) {
+		return q[x];
+	}
+	
 }
