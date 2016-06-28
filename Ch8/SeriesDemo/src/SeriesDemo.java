@@ -4,6 +4,7 @@ public class SeriesDemo {
 	public static void main (String[] args) {
 		
 		ByTwos ob = new ByTwos();
+		ByThrees ob2 = new ByThrees();
 		
 		for(int i = 0; i < 5; i++)
 			System.out.println("Next value is " + ob.getNext());
@@ -13,10 +14,10 @@ public class SeriesDemo {
 		for(int i = 0; i < 5; i++)
 			System.out.println("Next value is " + ob.getNext());
 		
-		System.out.println("\nStarting at 100, and get previous");
-		ob.setStart(100);
+		System.out.println("\nBy Threes");
+		ob2.setStart(3);
 		for(int i = 0; i < 5; i++)
-			System.out.println("Previous value is " + ob.getPrevious());
+			System.out.println("Next value is " + ob2.getNext());
 		
 	}
 }
