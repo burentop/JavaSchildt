@@ -31,4 +31,8 @@ public class FixedQueue implements ICharQ {
 		return q[getloc++];
 	}
 	
+	public void reset() {
+		putloc = getloc = 0;
+	}
+	
 }

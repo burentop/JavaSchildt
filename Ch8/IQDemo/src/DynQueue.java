@@ -33,4 +33,8 @@ public class DynQueue implements ICharQ {
 		return q[getloc++];
 	}
 	
+	public void reset() {
+		getloc = putloc = 0;
+	}
+	
 }

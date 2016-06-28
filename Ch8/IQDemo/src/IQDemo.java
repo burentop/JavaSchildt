@@ -5,6 +5,7 @@ public class IQDemo {
 		FixedQueue q1 = new FixedQueue(10);
 		DynQueue q2 = new DynQueue(5);
 		CircularQueue q3 = new CircularQueue(10);
+		CirDynQueue q4 = new CirDynQueue(5);
 		
 		ICharQ iQ;
 		
@@ -36,12 +37,12 @@ public class IQDemo {
 		
 		System.out.println();
 		
-		iQ = q3;
+		iQ = q4;
 		// Circular queue
 		for (i = 0; i < 10; i++)
 			iQ.put((char) ('A' + i));
 		
-		System.out.print("Contents of circular queue: ");
+		System.out.print("Contents of circular dynamic queue: ");
 		for (i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
@@ -53,7 +54,7 @@ public class IQDemo {
 		for (i = 10; i < 20; i++)
 			iQ.put((char) ('A' + i));
 		
-		System.out.print("Contents of circular queue: ");
+		System.out.print("Contents of circular dynamic queue: ");
 		for (i = 0; i < 10; i++) {
 			ch = iQ.get();
 			System.out.print(ch);
