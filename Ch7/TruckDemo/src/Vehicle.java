@@ -1,4 +1,4 @@
-public class Vehicle {
+public class Vehicle implements IVehicle {
 
 	private int passengers; // number of passengers
 	private int fuelcap; // fuel capacity in gallons
@@ -12,12 +12,12 @@ public class Vehicle {
 	}
 	
 	// Display the range
-	int range() {
+	public int range() {
 		return fuelcap * mpg;
 	}
 	
 	// Compute fuel needed for a given distance.
-	double fuelneeded (int miles) {
+	public double fuelneeded (int miles) {
 		return (double) miles / mpg;
 	}
 	
