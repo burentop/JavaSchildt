@@ -1,4 +1,4 @@
-
+package qpack;
 public class CirDynQueue implements ICharQ {
 
 	private char q[]; // holds the queue

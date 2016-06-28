@@ -1,4 +1,4 @@
-
+package qpack;
 public class DynQueue implements ICharQ {
 
 	private char q[]; // holds the queue

@@ -1,3 +1,4 @@
+package qpack;
 
 public interface ICharQ {
 

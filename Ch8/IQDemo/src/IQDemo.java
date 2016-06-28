@@ -1,3 +1,8 @@
+import qpack.CirDynQueue;
+import qpack.CircularQueue;
+import qpack.FixedQueue;
+import qpack.ICharQ;
+
 // Demonstrate ICharQ interface
 public class IQDemo {
 	public static void main (String[] args) {

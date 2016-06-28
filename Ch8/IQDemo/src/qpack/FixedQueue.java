@@ -1,3 +1,4 @@
+package qpack;
 // Fixed-size queue for characters.
 public class FixedQueue implements ICharQ {
 
