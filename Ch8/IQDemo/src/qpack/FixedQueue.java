@@ -13,20 +13,18 @@ public class FixedQueue implements ICharQ {
 	}
 	
 	// Put character into the queue
-	public void put(char ch) {
+	public void put(char ch) throws QueueFullException {
 		if (putloc == q.length) {
-			System.out.println(" - Queue is full.");
-			return;
+			throw new QueueFullException(q.length);
 		}
 		
 		q[putloc++] = ch;
 	}
 	
 	// Get a character from the queue
-	public char get() {
+	public char get() throws QueueEmptyException {
 		if (getloc == putloc) {
-			System.out.println(" - Queue is empty.");
-			return (char) 0;
+			throw new QueueEmptyException();
 		}
 		
 		return q[getloc++];
