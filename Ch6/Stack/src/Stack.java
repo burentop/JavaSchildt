@@ -20,7 +20,7 @@ public class Stack {
 	}
 	
 	// Construct a Stack with initial values.
-	Stack (char a[]) {
+	Stack (char a[]) throws FullStackException {
 		loc = 0;
 		s = new char[a.length];
 		
@@ -29,20 +29,18 @@ public class Stack {
 	}
 	
 	// push a character into the stack
-	void push(char ch) {
+	void push(char ch) throws FullStackException {
 		if (loc == s.length) {
-			System.out.println(" - Stack is full.");
-			return;
+			throw new FullStackException();
 		}
 		
 		s[loc++] = ch;
 	}
 	
 	// pop a character from the stack
-	char pop() {
+	char pop() throws EmptyStackException {
 		if (loc == 0) {
-			System.out.println(" - Stack is empty.");
-			return (char) 0;
+			throw new EmptyStackException();
 		} else {
 			loc--;
 			return s[loc];
